@@ -1,0 +1,354 @@
+/******************************************
+/* CSS
+/*******************************************/
+
+/* Box Model Hack */
+*{
+  box-sizing: border-box;
+}
+@import url('https://fonts.googleapis.com/css2?family=Gentium+Book+Basic:wght@400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700;900&display=swap');
+
+/******************************************
+/* LAYOUT
+/*******************************************/
+
+/* /////////////// MEOW Background /////////////// */
+
+body {
+  padding: 0;
+  margin:0;
+  background-color: #260b24;
+  background-repeat: no-repeat;
+  background-size: auto;
+  background-position: center center;
+  background-image: none;
+  z-index: -1;
+  }
+  
+  #starshine {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    z-index: -1;
+  }    
+      
+  .shine {
+    display: block;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    z-index: -1;
+    background-image: url(https://media0.giphy.com/media/82P1f7DeiqUX6AJToD/giphy.gif);
+    background-repeat: no-repeat;
+    background-position:center;
+    background-size: 100% 100%;
+    overflow: hidden;
+    color: tansparent;
+    -moz-opacity: 0.0;
+    opacity: 0.0;
+    animation: glitter 8s linear 0s infinite normal;
+    -webkit-animation: glitter 8s linear 0s infinite normal;
+    -moz-animation: glitter 12s linear 0s infinite normal;
+    -ms-animation: glitter 14s linear 0s infinite normal;
+    -o-animation: glitter 14s linear 0s infinite normal;
+  }
+  
+  .shine.small {
+    width: 40px;
+    height: 10px;
+  }
+  
+  .shine.medium {
+    width: 50px;
+    height: 20px;
+  }
+  
+  .shine.large {
+    width: 70px;
+    height: 30px;
+  }
+  
+  /*CSS3 keyframes for glittering effect*/
+  @keyframes glitter {
+    0% {
+      -webkit-transform: scale(0.9) rotate(0deg);
+      opacity: 0;
+    }
+    25% {
+      -webkit-transform: scale(1) rotate(360deg);
+      opacity: 1;
+    }
+    50% {
+      -webkit-transform: scale(0.9) rotate(720deg);
+      opacity: 0;
+    }
+    100% {
+      -webkit-transform: scale(0.9) rotate(0deg);
+      opacity: 0;
+    }
+  }
+
+/* //////////////////////////////////////////////////// */
+
+/* /////////////// Confetti + images + text /////////////// */
+
+  * {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    text-align: center;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.confetti-button {
+    font-family: 'Helvetica', 'Arial', sans-serif;
+    display: block;
+    padding: 20px;
+    padding-top: 85px;
+    appearance: none;
+    background-color: #3c343cd7;
+    border: none;
+    cursor: pointer;
+    position: relative;
+    transition: transform ease-in 0.1s, box-shadow ease-in 0.25s;
+    box-shadow: inset 0 2px 100px #ff4df3;
+    border-radius: 50%;
+    text-transform: uppercase;
+    width: 800px !important;
+    height: 800px !important;
+    margin: auto !important;
+    border: 10px solid #ffffffab !important;
+}
+
+
+#catImg {
+  box-shadow: 0 2px 100px #ff74f6;
+  border-radius: 140% / 50%;
+  margin: auto;
+  max-width: 500px !important;
+  max-height: 400px !important;
+  display: none;
+}
+
+.introSect {
+  box-shadow: inset 0 0px 100px #ff74f6;
+  width: 500px;
+  height: 500px;
+  position: relative;
+  overflow: hidden;
+  border-radius: 50%;
+  margin: auto;
+  margin-top: 7%;
+}
+#introCat {
+  display: inline;
+  margin: auto;
+  margin-top: 20%;
+  height: 60%;
+  width: auto;
+}
+
+.text {
+    color: #ffffff;
+    font-family: 'Roboto', sans-serif;
+    font-size: 21px;
+    font-weight: 600;
+    line-height: 35px;
+    text-align: center !important;
+    max-width: 600px;
+    width: 600px;
+    margin: auto;
+    margin-top: 20px;
+    justify-content: center;
+    box-shadow:  0 2px 100px #ff74f6;
+    border-radius: 30px;
+    padding: 10px;
+    background-color: #3c343cd7;
+    display: none;
+}
+
+#outerSect {
+  display: flex;
+  box-shadow: 0 0px 100px #ff74f6;
+  border-radius: 140% / 70%;
+  margin: auto;
+}
+
+#innerSect {
+  padding: 2em;
+  appearance: none;
+  background-color: #8863866b;
+  border: none;
+  cursor: pointer;
+  position: relative;
+  transition: transform ease-in 0.1s, box-shadow ease-in 0.25s;
+  box-shadow: 0 2px 100px #ff4df3;
+  border-radius: 50%;
+  text-transform: uppercase;
+  margin: auto;
+  border: 10px solid rgba(246, 152, 255, 0.671) !important;
+}
+
+
+.confetti-button:focus {
+    outline: 0;
+}
+
+.confetti-button:before, .confetti-button:after {
+    position: absolute;
+    content: "";
+    display: block;
+    width: 140%;
+    height: 100%;
+    left: -10%;
+    z-index: -1000;
+    transition: all ease-in-out 0.5s;
+    background-repeat: no-repeat;
+}
+
+
+.confetti-button:before {
+    display: none;
+    top: -55%;
+    background-image: radial-gradient(circle, #ff4df3 20%, transparent 20%),
+    radial-gradient(circle, transparent 20%, #ff99f8 20%, transparent 30%),
+    radial-gradient(circle, #fff0fe 20%, transparent 20%),
+    radial-gradient(circle, #ff4df3 20%, transparent 20%),
+    radial-gradient(circle, transparent 10%, #ff99f8 15%, transparent 20%),
+    radial-gradient(circle, #fff0fe 20%, transparent 20%),
+    radial-gradient(circle, #ff4df3 20%, transparent 20%),
+    radial-gradient(circle, #ff99f8 20%, transparent 20%),
+    radial-gradient(circle, #fff0fe 20%, transparent 20%);
+    background-size: 10% 10%,
+    20% 20%,
+    15% 15%,
+    20% 20%,
+    18% 18%,
+    10% 10%,
+    15% 15%,
+    10% 10%,
+    18% 18%;
+}
+
+.confetti-button:after {
+    display: none;
+    bottom: -55%;
+    background-image: radial-gradient(circle, #ff4df3 20%, transparent 20%),
+    radial-gradient(circle, #ff99f8 20%, transparent 20%),
+    radial-gradient(circle, transparent 10%, #fff0fe 15%, transparent 20%),
+    radial-gradient(circle, #ff4df3 20%, transparent 20%),
+    radial-gradient(circle, #ff99f8 20%, transparent 20%),
+    radial-gradient(circle, #fff0fe 20%, transparent 20%),
+    radial-gradient(circle, #ff4df3 20%, transparent 20%);
+    background-size: 15% 15%,
+    20% 20%,
+    18% 18%,
+    20% 20%,
+    15% 15%,
+    10% 10%,
+    20% 20%;
+}
+
+#catImg:active {
+    transform: scale(0.9);
+    background-color: #e21cd5;
+    box-shadow: 0 2px 25px #e21cd5;
+}
+
+.confetti-button.animate:before {
+    display: block;
+    animation: topBubbles ease-in-out 0.75s forwards;
+}
+
+.confetti-button.animate:after {
+    display: block;
+    animation: bottomBubbles ease-in-out 0.75s forwards;
+}
+
+@keyframes topBubbles {
+    0% {
+        background-position: 5% 90%,
+        10% 90%,
+        10% 90%,
+        15% 90%,
+        25% 90%,
+        25% 90%,
+        40% 90%,
+        55% 90%,
+        70% 90%;
+    }
+    50% {
+        background-position: 0 80%,
+        0 20%,
+        10% 40%,
+        20% 0,
+        30% 30%,
+        22% 50%,
+        50% 50%,
+        65% 20%,
+        90% 30%;
+    }
+    100% {
+        background-position: 0 70%,
+        0 10%,
+        10% 30%,
+        20% -10%,
+        30% 20%,
+        22% 40%,
+        50% 40%,
+        65% 10%,
+        90% 20%;
+        background-size: 0 0,
+        0 0,
+        0 0,
+        0 0,
+        0 0,
+        0 0;
+    }
+}
+
+@keyframes bottomBubbles {
+    0% {
+        background-position: 10% -10%,
+        30% 10%,
+        55% -10%,
+        70% -10%,
+        85% -10%,
+        70% -10%,
+        70% 0;
+    }
+    50% {
+        background-position: 0 80%,
+        20% 80%,
+        45% 60%,
+        60% 100%,
+        75% 70%,
+        95% 60%,
+        105% 0;
+    }
+    100% {
+        background-position: 0 90%,
+        20% 90%,
+        45% 70%,
+        60% 110%,
+        75% 80%,
+        95% 70%,
+        110% 10%;
+        background-size: 0 0,
+        0 0,
+        0 0,
+        0 0,
+        0 0,
+        0 0;
+    }
+}
+
