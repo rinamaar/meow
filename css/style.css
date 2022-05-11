@@ -181,6 +181,8 @@ body {
   box-shadow: 0 0px 100px #ff74f6;
   border-radius: 140% / 70%;
   margin: auto;
+  margin-top: 20px;
+
 }
 
 #innerSect {
